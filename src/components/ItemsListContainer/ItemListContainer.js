@@ -1,22 +1,40 @@
 
+import { useEffect, useState } from "react";
 import "./ItemListContainer.scss"
+import { pedirDatos } from "../../helpers/pedirDatos";
+import { useParams } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
+
+
+
 
 const ItemListContainer = () =>{
-    
+
+    const [productos, setProductos] = useState([])
+    const {categoryId} = useParams()
+
+    useEffect(()=>{
+            pedirDatos()
+                .then((response) =>{
+                    if (!categoryId) {
+                        setProductos (response)
+                    }else{
+                        setProductos(response.filter((prod)=> prod.category === categoryId))
+                    }
+                })
+                .catch((error) =>{
+                    console.log(error)
+                })
+                /*.finally(() =>{
+                    console.log("fin del proceso")
+                }) */
+        },[categoryId])
+
     return(
-        <main className="main">
 
-            <div className="main_container">
-            <h2>Lista de Peliculas</h2>
-            <hr/>
-            <p>PELICULA 1</p>
-            <p>PELICULA 2</p>
-            <p>PELICULA 3</p>
-            <p>PELICULA 4</p>
-            <p>PELICULA 5</p>
-            </div>
-
-        </main>
+        <div className="contenedor">
+            <ItemList items={productos} />
+        </div>
     )
 }
 

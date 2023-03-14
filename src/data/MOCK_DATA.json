@@ -1,0 +1,57 @@
+
+[
+    {
+        "id": 1,
+        "name": "pelicula 1",
+        "description": "lorem ipsum producto 1",
+        "price": 1500,
+        "img":"https://via.placeholder.com/220",
+        "category": "terror",
+        "stock": 10
+    },
+    {
+        "id": 2,
+        "name": "pelicula 2",
+        "description": "lorem ipsum producto 1",
+        "price": 2500,
+        "img":"https://via.placeholder.com/220",
+        "category": "terror",
+        "stock": 5
+    },
+    {
+        "id": 3,
+        "name": "pelicula 3",
+        "description": "lorem ipsum producto 1",
+        "price": 3500,
+        "img":"https://via.placeholder.com/220",
+        "category": "drama",
+        "stock": 3
+    },
+    {
+        "id": 4,
+        "name": "pelicula 4",
+        "description": "lorem ipsum producto 1",
+        "price": 4500,
+        "img":"https://via.placeholder.com/220",
+        "category": "drama",
+        "stock": 4
+    },
+    {
+        "id": 5,
+        "name": "pelicula 5",
+        "description": "lorem ipsum producto 1",
+        "price": 5500,
+        "img":"https://via.placeholder.com/220",
+        "category": "accion",
+        "stock": 1
+    },
+    {
+        "id": 6,
+        "name": "pelicula 6",
+        "description": "lorem ipsum producto 1",
+        "price": 6500,
+        "img":"https://via.placeholder.com/220",
+        "category": "accion",
+        "stock": 6
+    }
+]

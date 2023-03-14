@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom"
 import "./Navbar.scss"
 
 export const Navbar = () =>{
@@ -9,9 +10,12 @@ export const Navbar = () =>{
                 <img src="./imgs/MovieShop.png" alt="logo" className="header_logo"/>
 
                 <nav className="navbar">
-                    <a href="#" className="navbar_link">Inicio</a>
-                    <a href="#" className="navbar_link">Estrenos</a>
-                    <a href="#" className="navbar_link">Peliculas 2023</a>
+                    <Link to="/" className="navbar_link">Inicio</Link>
+                    <Link to="/productos/terror" className="navbar_link">Terror</Link>
+                    <Link to="/productos/drama" className="navbar_link">Drama</Link>
+                    <Link to="/productos/accion" className="navbar_link">Accion</Link>
+                    <Link to="/nosotros" className="navbar_link">Nosotros</Link>
+                    <Link to="/contacto" className="navbar_link">Contacto</Link>
                 </nav>
             </div>
         </header>
