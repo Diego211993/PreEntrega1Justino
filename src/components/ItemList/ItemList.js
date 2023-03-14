@@ -1,4 +1,4 @@
-import Item from "../item/Item"
+import Item from "../Item/Item"
 
 
 
@@ -10,7 +10,8 @@ const ItemList= ({items})=> {
             <hr/>
 
             <div className="row my-5">
-            {items.map((producto) => <Item item={producto} />)}
+            
+            {items.map((producto) => <Item key={producto.id} item={producto}/>) }
             </div>
         </div>
     )

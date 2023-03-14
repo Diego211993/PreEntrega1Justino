@@ -11,29 +11,40 @@ import ItemList from "../ItemList/ItemList";
 const ItemListContainer = () =>{
 
     const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
     const {categoryId} = useParams()
 
     useEffect(()=>{
+
+
+
             pedirDatos()
                 .then((response) =>{
                     if (!categoryId) {
                         setProductos (response)
+                        
                     }else{
                         setProductos(response.filter((prod)=> prod.category === categoryId))
                     }
                 })
                 .catch((error) =>{
                     console.log(error)
+                    
                 })
-                /*.finally(() =>{
-                    console.log("fin del proceso")
-                }) */
+                .finally(() =>{
+                    setLoading(false)
+                })
         },[categoryId])
 
     return(
 
         <div className="contenedor">
-            <ItemList items={productos} />
+            {
+                loading
+                ? <h2>Cargando...</h2>
+                :
+                <ItemList items={productos} />
+            }
         </div>
     )
 }
