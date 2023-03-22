@@ -7,7 +7,9 @@ export const Navbar = () =>{
     return(
         <header className="header">
             <div className="header_container">
+                <Link to="/">
                 <img src="./imgs/MovieShop.png" alt="logo" className="header_logo"/>
+                </Link>
 
                 <nav className="navbar">
                     <Link to="/" className="navbar_link">Inicio</Link>

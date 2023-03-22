@@ -1,9 +1,11 @@
 import ItemListContainer from "./components/ItemsListContainer/ItemListContainer";
 import { Navbar } from "./components/Navbar/Navbar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, HashRouter } from "react-router-dom";
 import PokeApi from "./ejemplos/PokeApi/PokeApi";
 import Nosotros from "./components/Nosotros/Nosotros";
 import Contacto from "./components/Contacto/Contacto";
+import { Nav } from "react-bootstrap";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 
 
@@ -14,29 +16,26 @@ function App() {
 
 
   return (
-
+    
     <BrowserRouter>
     
-      <Navbar />
+      <Navbar/>
 
       <Routes>
-        <Route path="/" element={ <ItemListContainer /> }/>
-        <Route path="productos/:categoryId" element={ <ItemListContainer /> }/>
-        {/* <Route path="/detail/:itemId" element={ <ItemDetailContainer/> }/> */}
-        <Route path="/nosotros" element={<Nosotros/>}/>
-        <Route path="/contacto" element={<Contacto/>}/>
-        <Route path="/pokemon" element={<PokeApi/>}/>
+        <Route path="/" element={<ItemListContainer/>}/>
+        <Route path="/productos/:categoryId" element={<ItemListContainer/>} />
+        <Route path="/detail/:itemId" element={<ItemDetailContainer/>} />
+        <Route path="/nosotros" element={<Nosotros/>} />
+        <Route path="/contacto" element={<Contacto/>} />
+        <Route path="pokemon" element={<PokeApi/>} />
+        <Route path="*" element={<Navigate to="/"/>} />
       </Routes>
-
-      
-      
-
-      
-      
-      
     
     </BrowserRouter>
-  );
+    
+    
+  )
 }
 
 export default App;
+
