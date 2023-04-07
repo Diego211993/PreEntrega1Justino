@@ -2,15 +2,15 @@ import { useState } from "react"
 
 
 
-const ItemCount= ({max})=> {
+const ItemCount= ({max, cantidad, setCantidad, handleAgregar})=> {
 
-    const [cantidad, setCantidad] = useState(1)
+    
 
-    const handleSumar =()=>{
+    const handleSumar = () =>{
         cantidad < max && setCantidad(cantidad + 1)
     }
-    
-    const handleRestar =()=>{
+
+    const handleRestar = () =>{
         cantidad > 1 && setCantidad(cantidad - 1)
     }
 
@@ -20,7 +20,7 @@ const ItemCount= ({max})=> {
             <span className="mx-2"> {cantidad} </span>
             <button onClick={handleSumar} className="btn btn-primary">+</button>
             <br/>
-            <button className="btn btn-success my-2">Agregar al carrito</button>
+            <button onClick={handleAgregar} className="btn btn-success my-2">Agregar al carrito</button>
         </div>
     )
 }

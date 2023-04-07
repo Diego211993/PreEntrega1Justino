@@ -3,19 +3,16 @@ import { useEffect } from "react"
 const Nosotros = () =>{
 
     useEffect(() =>{
-
-        const clickear = () =>{
-            console.log("click")
+        const clickear = () => {
+            console.log(clickear)
         }
-        
+
         window.addEventListener("click", clickear)
 
-        return() =>{
+        return () =>{
             window.removeEventListener("click", clickear)
         }
-    },[])
-
-
+    }, [])
 
 
     return(
