@@ -2,8 +2,12 @@
 import { Link } from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget"
 import "./Navbar.scss"
+import { useContext } from "react"
+import { LoginContext } from "../Context/LoginContext"
 
 export const Navbar = () =>{
+
+    const {user, logout} = useContext(LoginContext)
 
     return(
         <header className="header">
@@ -20,6 +24,12 @@ export const Navbar = () =>{
                 </nav>
                 
                 <CartWidget/>
+                
+            </div>
+
+            <div className="login-state">
+                <h6>Bienvenido {user.email}</h6>
+                <button className="btn btn-danger" onClick={logout}>Logout</button>
             </div>
         </header>
 

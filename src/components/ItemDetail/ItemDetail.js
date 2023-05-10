@@ -30,6 +30,8 @@ const ItemDetail= ({item})=> {
             <img src={item.img} alt={item.name} />
             <p> {item.description}</p>
             <p> Precio: ${item.price} </p>
+            {item.stock <= 5 && <p><strong>Quedan pocas unidades</strong> </p>}
+
 
             {
                 isInCart(item.id)
